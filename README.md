@@ -13,6 +13,7 @@ To build the images, the JBoss AS v7.1.1 distribution is required. The zip file 
 Copy the zip file to both 'fs_problem' and 'no_fs_problem' directory.
 
 To build the Docker image that has the filesystem problem, navigate into the 'fs_problem' directory and execute the following command: `docker build --rm -t johndoe/jbossas-fs-problem .`
+
 To build the Docker image that doesn't have the filesystem problem, navigate into the 'no_fs_problem' directory and execute the following command: `docker build --rm -t johndoe/jbossas-no-fs-problem .`
 
 ## Running the containers.
