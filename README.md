@@ -12,13 +12,13 @@ To build the images, the JBoss AS v7.1.1 distribution is required. The zip file 
 
 Copy the zip file to both 'fs_problem' and 'no_fs_problem' directory.
 
-To build the Docker image that has the filesystem problem, navigate into the 'fs_problem' directory and execute the following command: docker build --rm -t johndoe/jbossas-fs-problem .
-To build the Docker image that doesn't have the filesystem problem, navigate into the 'no_fs_problem' directory and execute the following command: docker build --rm -t johndoe/jbossas-no-fs-problem .
+To build the Docker image that has the filesystem problem, navigate into the 'fs_problem' directory and execute the following command: `docker build --rm -t johndoe/jbossas-fs-problem .`
+To build the Docker image that doesn't have the filesystem problem, navigate into the 'no_fs_problem' directory and execute the following command: `docker build --rm -t johndoe/jbossas-no-fs-problem .`
 
 ## Running the containers.
-Start the container which doesn't have the filesystem problem with the following command:  docker run -t -i --name jbossas-no-fs-problem -h jbossas-no-fs-problem johndoe/jbossas-no-fs-problem bash
+Start the container which doesn't have the filesystem problem with the following command:  `docker run -t -i --name jbossas-no-fs-problem -h jbossas-no-fs-problem johndoe/jbossas-no-fs-problem bash`
 In the container shell, make sure that you are the 'jboss' user (i.e. by using the 'whoami' command). Navigate to the directory '/opt/jboss-as-7.1.1.Final/standalone/tmp/auth/'.
 
-Next, start the container which does have the filesystem problem with the following command: docker run -t -i --name jbossas-fs-problem -h jbossas-fs-problem johndoe/jbossas-fs-problem bash
+Next, start the container which does have the filesystem problem with the following command: `docker run -t -i --name jbossas-fs-problem -h jbossas-fs-problem johndoe/jbossas-fs-problem bash`
 In the container shell, make sure that you're the 'jboss' user (i.e.  by using the 'whoami' command). Navigate to the directory '/opt/jboss-as-7.1.1.Final/standalone/tmp/auth/'. Observe that in this container you will get a 'Permission denied', even though the 'jboss' user is owner of the directory and permission of the directory are set to 700.
 
